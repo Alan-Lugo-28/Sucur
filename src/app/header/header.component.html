@@ -1,0 +1,328 @@
+<nav id="navBar" class="nav-img-banorte navbar navbar-expand-lg" style="z-index: 100; background-color:#E2062D">
+    <div class="collapse navbar-collapse" id="navbarText">
+        <!-- <ul class="navbar-nav mr-auto">
+        </ul> -->
+        <div style="margin-right: 30%;">
+            <img alt="Mostrar mapa" src="/icon-banorte.png" style="margin-left: 20%; width: 290px;">
+        </div>
+        <div>
+            <img alt="Mostrar mapa" src="/icon-corresponsales.png" style="width: 45px; height: 45px;">
+            <span style="font-size: 28px; color: white;margin: 0 10px;">Corresponsales cerca</span>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+        <!-- <ul class="nav navbar-nav navbar-right" (click)="showModificaCr()"> -->
+            <li>
+                <a>
+                    <span id="hora" style="font-size: 22pt;margin-right: 13px;color: white;font-family: Gotham-Medium;">
+                    </span>
+                    <span style="font-size: 22pt;margin-right: 13px;color: white;font-family: Gotham-Medium;"> |
+                    </span>
+                    <span id="etiqueta" style="font-size: 22pt;margin-right: 13px;color: white;font-family: Gotham-Medium;"> Cr:
+                    </span>
+                    <span id="terminal" style="font-size: 22pt;margin-right: 13px;color: white;font-family: Gotham-Medium;">1023
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- <div id="iconoAyudaLogin" style="display: block; width: 13%;" (click)="ayudaClienteLogin()"> -->
+        <div id="iconoAyudaLogin" style="display: block; width: 13%;">
+            <img src="/icon-ayuda-blanco.png" style="margin-left: 0%; width: 100px; margin-top: 6%;">
+            <span style="font-size: 28px; color: white;">Ayuda</span>
+        </div>
+        <!-- <div id="iconoAyudaImpresionEstadoCuentaUno" style="display: none; width: 13%;"
+            (click)="ayudaClienteConsultaEstadosCuentaUno()">
+            <img src="./assets/img/v3/icon-ayuda-blanco.png" style="margin-left: 0%; width: 100px; margin-top: 6%;">
+            <span style="font-size: 28px; color: white;">Ayuda</span>
+        </div>
+        <div id="iconoAyudaImpresionEstadoCuentaUnoTdc" style="display: none; width: 13%;"
+            (click)="ayudaClienteConsultaEstadosCuentaUnoTdc()">
+            <img src="./assets/img/v3/icon-ayuda-blanco.png" style="margin-left: 0%; width: 100px; margin-top: 6%;">
+            <span style="font-size: 28px; color: white;">Ayuda</span>
+        </div>
+        <div id="iconoAyudaImpresionEstadoCuentaDos" style="display: none; width: 13%;"
+            (click)="ayudaClienteConsultarEstadosCuentaDos()">
+            <img src="./assets/img/v3/icon-ayuda-blanco.png" style="margin-left: 0%; width: 100px; margin-top: 6%;">
+            <span style="font-size: 28px; color: white;">Ayuda</span>
+        </div>
+        <div id="iconoAyudaCobroRemesas" style="display: none; width: 13%;" (click)="ayudaClienteCobroRemesas()">
+            <img src="./assets/img/v3/icon-ayuda-blanco.png" style="margin-left: 0%; width: 100px; margin-top: 6%;">
+            <span style="font-size: 28px; color: white;">Ayuda</span>
+        </div>
+        <div id="iconoAyudaPagoTdc" style="display: none; width: 13%;" (click)="ayudaClientePagoTarjetaCredito()">
+            <img src="./assets/img/v3/icon-ayuda-blanco.png" style="margin-left: 0%; width: 100px; margin-top: 6%;">
+            <span style="font-size: 28px; color: white;">Ayuda</span>
+        </div>
+         -->
+        <!--onclick="mostrarMapaApiBanorte()"  (click)="muestraMapa()" (click)="iniciarBusquedaCR()"-->
+        <!--<div style="margin-right: 2%; display: block" id="iconoUbicacion" (click)="muestraMapa()">-->
+        
+
+        <div id="btnCerrarSesion" style="display: none; width: 21%">
+            <button onclick="cerrarSesionBtn()" class="btn btnGenerico" style="background-color: transparent;border: 1px solid white;color: white;height: 30pt;line-height: 1;margin-left: 40%;z-index: 100;width: 110px !important;">CERRAR SESSI&Oacute;N
+                </button>
+        </div>
+    </div>
+</nav>
+
+<!--Modal consulta de error Ubicacion CR-->
+
+<!-- <div class="modal fade" id="errorModalUbicacionCR" role="dialog" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p style="text-align: center;" id="mnsError" class="letranegrita">No fue posible recuperar latitud y longitud para cargar mapa interactivo
+                </p>
+            </div>
+            <div class="modal-footer" style="text-align: -webkit-center;display: block;">
+                <button type="button" class="btn btn-danger btnRadius" data-dismiss="modal" (click)="muestraMapa()">ACEPTAR</button>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+<!-- Modal Ayuda Cliente Login -->
+<!-- <div class="modal fade" id="ayudaClienteLogin" tabindex="-1" role="dialog" 
+    aria-hidden="true" style="overflow-y: hidden;" data-dismiss="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div data-dismiss="modal" class="modal-content shadowModal" style=" width: 800px; margin: 0% 0% 0% -15%;">
+            <div data-dismiss="modal"
+                style="position: absolute;right: 8%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-top: 3%;font-size: 0.7rem;width: 5px;height: 34px;background: transparent;">
+                <img  height="30px" src="./assets/img/v3/icon-borrar.png" width="30px">
+            </div>
+            <div class="modal-header" align="center" style="align-self: center;margin-top: 0%; border-bottom: none">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #080808; margin-left: auto; margin-right: auto;"
+                        align="center">
+                        <div>
+                            <img src="assets/img/v3/icon-ayuda-rojo.png" class="align-center" alt="Smiley face"
+                                width="135px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h4 class="textoNegrita" align="center" style="margin-top: -10%; font-size: 20pt;">
+                    Ayuda
+                </h4>
+                <p class="texto" style="display: block; padding: 1% 8% 1% 8%; text-align: left;">
+                    1. Consulta los corresponsales Banorte m&aacute;s cercanos a ti, dando clic en
+                    <strong>"Corresponsales cerca"</strong>.
+                </p>
+                <p class="texto" style="display: block; padding: 1% 8% 1% 8%; text-align: left;">
+                    2. Para conocer tarifas, comisiones de productos y avisos, selecciona el bot&oacute;n inferior del
+                    lado izquierdo.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div data-dismiss="modal">
+        <img src="./assets/img/v3/icon-dos-izq.png" style="width: 135px; margin: -5% 0% 0% 27%;">
+        <img src="./assets/img/v3/icon-uno-arr.png" style="height: 135px; margin: -102% 0% 0% 88%;">
+    </div>
+</div> -->
+
+<!-- Modal Ayuda Cliente Consultar Estados Cuenta--> 
+<!-- <div class="modal fade" id="ayudaClienteConsultarEstadosCuentaUno" tabindex="-1" role="dialog" 
+    aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 40%;">
+        <div data-dismiss="modal" class="modal-content shadowModal" style="margin: 65% 0% 0% 26%; width: 1000px; height: 174px; padding: 2% 1% 0% 0%;">
+            <div data-dismiss="modal"
+                style="position: absolute;right: 8%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-top: 3%;font-size: 0.7rem;width: 5px;height: 34px;background: transparent;">
+                <img alt="Mostrar mapa" height="30px" src="./assets/img/v3/icon-borrar.png" width="30px" style="margin: -650% 0% 0% 850%;">
+            </div>
+            <div class="modal-header" align="center" style="align-self: center;margin-top: 0%; border-bottom: none">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #080808; margin-left: auto; margin-right: auto;"
+                        align="center">
+                        <div>
+                            <img src="assets/img/v3/icon-ayuda-rojo.png" class="align-center" alt="Smiley face"
+                                width="135px" style="margin: -2% 0% 0% -621%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p class="texto" style="display: block; text-align: left; margin: -13% 0% 0% 16%;">
+                    1. Da clic en el bot&oacute;n naranja y elige la cuenta que deseas consultar
+                </p>
+                <p class="texto" style="display: block; text-align: left; margin: 0% 0% 0% 16%;">
+                    2. Selecciona "CONTINUAR"
+                </p>
+            </div>
+        </div>
+    </div>
+    <div data-dismiss="modal">
+        <img src="./assets/img/v3/icon-uno-izq.png" style="width: 135px; margin: -53% 0% 0% 75%;">
+        <img src="./assets/img/v3/icon-dos-der.png" style="width: 135px; margin: -8% 0% 0% -6%;">
+    </div>
+</div> -->
+
+<!-- Modal Ayuda Cliente Consultar Estados Cuenta Detalles-->
+<!-- <div class="modal fade" id="ayudaClienteConsultarEstadosCuentaDos" tabindex="-1" role="dialog" 
+    aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 40%;">
+        <div data-dismiss="modal" class="modal-content shadowModal" style="margin: -11% 0% 0% 25%; height: 250px; width: 1100px; ">
+            <div data-dismiss="modal"
+                style="position: absolute;right: 8%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-top: 3%;font-size: 0.7rem;width: 5px;height: 34px;background: transparent;">
+                <img alt="Mostrar mapa" height="30px" src="./assets/img/v3/icon-borrar.png" width="30px" style= "margin: -600% 0% 0% 800%;">
+            </div>
+            <div class="modal-header" align="center" style="align-self: center;margin-top: 0%; border-bottom: none">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #080808; margin-left: auto; margin-right: auto;"
+                        align="center">
+                        <div>
+                            <img src="assets/img/v3/icon-ayuda-rojo.png" class="align-center" alt="Smiley face"
+                                width="135px" style="margin: 20% 0% 0% -680%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body" style="margin: -18% 0% 0% 0%; padding: 2% 5% 0% 1%;">
+                <p class="texto" style="display: block; text-align: left; margin: 0% 0% 0% 15%;">
+                    1. Seleccionar el recuadro del mes que deseas imprimir o enviar por correo electr&oacute;nico tu EDC
+                </p>
+                <p class="texto" style="display: block; text-align: left; margin: 0% 0% 0% 15%;">
+                    2. Elige la opci&oacute;n que necesitas en los recuadros inferiores: IMPRIMIR o ENVIAR POR CORREO
+                    (lo recibir&aacute;s en tu cuenta de correo registrada)
+                </p>
+            </div>
+        </div>
+    </div>
+    <div data-dismiss="modal">
+        <img src="./assets/img/v3/icon-uno-der.png" style= "width: 135px; margin: -65% 0% 0% 11%;">
+        <img src="./assets/img/v3/icon-dos-der.png" style= "width: 135px; margin: -9% 0% 0% 39%;">
+    </div>
+</div> -->
+
+<!-- Modal Ayuda Cliente Remesas -->
+<!-- <div class="modal fade" id="ayudaClienteCobroRemesas" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="ModalTDDLogin2" aria-hidden="true" style="overflow-y: hidden; width: 91%; height: 34%; margin: 6% 0% 0% 41%;">
+    <div class="modal-dialog" role="document" style="margin: 0% 0% 0% 0%;">
+        <div class="modal-content shadowModal" style="width: 1042px; height: 230px;">
+            <div (click)="cerrarayudaClienteCobroRemesas()"
+            style="position: absolute;right: 2%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-top: 1%;font-size: 0.7rem;width: 30px;height: 34px;background: transparent; z-index: 1050;">
+            <img  height="30px" src="./assets/img/v3/icon-borrar.png" width="30px">
+            </div>
+            <div class="modal-header" align="center" style="align-self: center;margin-top: 0%; border-bottom: none">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #080808; margin-left: auto; margin-right: auto;"
+                        align="center">
+                        <div>
+                            <img src="assets/img/v3/icon-ayuda-rojo.png" class="align-center" alt="Smiley face"
+                                width="135px" style="margin: 5% 0% 0% -639%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body" style="padding: 0% 6% 2% 0%;">
+                <p class="texto" style="display: block; text-align: left; margin: -5% 0% 0% 15%;">
+                    1. Introduce tu n&uacute;mero de referencia
+                </p>
+                <p class="texto" style="display: block; text-align: left; margin: 0% 0% 0% 15%;">
+                    2. Da clic en el bot&oacute;n naranja y selecciona el tipo de identificaci&oacute;n que prefieras
+                </p>
+                <p class="texto" style="display: block; text-align: left; margin: 0% 0% 0% 15%;">
+                    3. Ingresa tu n&uacute;mero de identificaci&oacute;n
+                </p>
+                <p class="texto" style="display: block; text-align: left; margin: 0% 0% 0% 15%;">
+                    4. Da clic en el bot&oacute;n "CONTINUAR"
+                </p>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="tiempoFlechas" id="flechasayudaClienteCobroRemesas" 
+    style="position: absolute; display: none; margin: 0% 0% 0% 0%; height: 10%; width: 10%;">
+        <img src="./assets/img/v3/icon-uno-der.png" style="width: 135px; margin: 208% 0% 0% 7%;">
+        <img src="./assets/img/v3/icon-dos-izq.png" style="width: 135px; margin: -63% 0% 0% 885%;">
+        <img src="./assets/img/v3/icon-tres-der.png" style="width: 135px; margin: 30% 0% 0% 6%;">
+        <img src="./assets/img/v3/icon-cuatro-der.png" style="width: 135px; margin: 119% 0% 0% 759%;">
+</div> -->
+
+<!-- Modal Ayuda Cliente Pago Tarjeta Credito-->
+<!-- <div class="modal fade" id="ayudaClientePagoTarjetaCredito" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="ModalTDDLogin2" aria-hidden="true" style="overflow-y: hidden; width: 91%; height: 34%; margin: 6% 0% 0% 41%;">
+    <div class="modal-dialog" role="document" style="width: 0%; margin: 0% 0% 0% 0%;">
+        <div class="modal-content shadowModal" style="margin: -11% 0% 0% 24%; width: 1054px; height: 233px;">
+            <div (click)="cerrarayudaClientePagoTarjetaCredito()"
+                style="position: absolute;right: 4%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-top: 1%;font-size: 0.7rem;width: 5px;height: 34px;background: transparent; z-index: 1050;">
+                <img height="30px" src="./assets/img/v3/icon-borrar.png" width="30px">
+            </div>
+            <div class="modal-header" align="center" style="align-self: center;margin-top: 0%; border-bottom: none">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #080808; margin-left: auto; margin-right: auto;"
+                        align="center">
+                        <div>
+                            <img src="assets/img/v3/icon-ayuda-rojo.png" class="align-center" alt="Smiley face"
+                                width="135px" style="margin: 19% 20% 0% -640%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p class="texto" style="display: block; text-align: left;margin: -3% 0% 0% 15%;">
+                    1. Da clic en el bot&oacute;n naranja y selecciona la <strong>Tarjeta</strong> que deseas pagar
+                </p>
+                <p class="texto" style="display: block; text-align: left;margin: 0% 0% 0% 15%;">
+                    2. Introduce el n&uacute;mero de tu Tarjeta (16 car&aacute;cteres).
+                </p>
+                <p class="texto" style="display: block; text-align: left;margin: 0% 0% 0% 15%;">
+                    3. Da clic en el bot&oacute;n naranja y selecciona el banco de tu Tarjeta
+                </p>
+                <p class="texto" style="display: block; text-align: left;margin: 0% 0% 0% 15%;">
+                    4. Ingresa el importe a pagar
+                </p>
+                <p class="texto" style="display: block; text-align: left;margin: 0% 0% 0% 15%;">
+                    5. Selecciona "CONTINUAR"
+                </p>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="tiempoFlechas" id="flechasayudaClientePagoTarjetaCredito" 
+    style="position: absolute; display: none; margin: 0% 0% 0% 0%; height: 10%; width: 10%;">
+    <img src="./assets/img/v3/icon-uno-der.png" style="width: 135px;margin: 205% 0% 0% 42%;">
+    <img src="./assets/img/v3/icon-dos-izq.png" style="width: 135px;margin: -53% 0% 0% 883%;">
+    <img src="./assets/img/v3/icon-tres-der.png" style="width: 135px;margin: 17% 0% 0% 42%;">
+    <img src="./assets/img/v3/icon-cuatro-izq.png" style="width: 135px;margin: -58% 0% 0% 883%;">
+    <img src="./assets/img/v3/icon-cinco-der.png" style="width: 135px;margin: 127% 0% 0% 759%;">
+</div> -->
+
+<!-- Modal Ayuda Cliente Consultar Estados Cuenta TDC--> 
+<!-- <div class="modal fade" id="ayudaClienteConsultarEstadosCuentaUnoTdc" tabindex="-1" role="dialog" 
+    aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 40%;">
+        <div data-dismiss="modal" class="modal-content shadowModal" style="margin: 65% 0% 0% 26%; width: 1000px; height: 174px; padding: 2% 1% 0% 0%;">
+            <div data-dismiss="modal"
+                style="position: absolute;right: 8%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-top: 3%;font-size: 0.7rem;width: 5px;height: 34px;background: transparent;">
+                <img alt="Mostrar mapa" height="30px" src="./assets/img/v3/icon-borrar.png" width="30px" style="margin: -650% 0% 0% 850%;">
+            </div>
+            <div class="modal-header" align="center" style="align-self: center;margin-top: 0%; border-bottom: none">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #080808; margin-left: auto; margin-right: auto;"
+                        align="center">
+                        <div>
+                            <img src="assets/img/v3/icon-ayuda-rojo.png" class="align-center" alt="Smiley face"
+                                width="135px" style="margin: -2% 0% 0% -621%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p class="texto" style="display: block; text-align: left; margin: -13% 0% 0% 16%;">
+                    1. Da clic en el bot&oacute;n naranja y elige la cuenta que deseas consultar
+                </p>
+                <p class="texto" style="display: block; text-align: left; margin: 0% 0% 0% 16%;">
+                    2. Selecciona "CONTINUAR"
+                </p>
+            </div>
+        </div>
+    </div>
+    <div data-dismiss="modal">
+        <img src="./assets/img/v3/icon-uno-izq.png" style="width: 135px; margin: -51% 0% 0% 74%;">
+        <img src="./assets/img/v3/icon-dos-der.png" style="width: 135px; margin: -9% 0% 0% -6%;">
+    </div>
+</div> -->

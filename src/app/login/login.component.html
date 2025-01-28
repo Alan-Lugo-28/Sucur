@@ -1,0 +1,273 @@
+<script type="text/javascript" src="../../assets/js/index.js"></script>
+<!-- <script tyoe="text/javascript" src="./assets/js/mca-cec-electron.js"></script> -->
+
+<div class=" row">
+<!-- el heigth era 478px -->
+    <div class="col-md-2 col-xs-12 col-sm-2 text-center animated fadeIn fast" style="margin-top: 1%;margin-left: 20px; border:solid red ;height:600px;">
+        <div style="max-width: 60%; margin-left: 40px;">
+            <label style="font-size: 40pt;font-family: Gotham-Bold;color: rgb(27, 26, 26);">BANCA DIGITAL</label>           
+                <div style="color: #080808; margin-bottom: -12%; margin-top: -29%; margin-left: -60px;">
+                    <div style="padding: 11%;">
+                        <label style="font-size: 14pt;font-family: Gotham-Medium;margin-bottom: -1%;font-weight: bold;">
+                        Inicia sesi&oacute;n con tu 
+                            tarjeta de d&eacute;bito o 
+                            tu tarjeta de credito
+                        </label>
+                        
+                        <img id="pantalla-inicio" src="/tarjetalogin.png" style="width:198px; margin-top: 6%;margin-bottom: 3%;margin-left: 25px;"alt="First slide">
+                        <div>
+                            <button type="button" class="color-botones btn btn-lg btnRadius " style="margin-left:-2%;background-color: #323E48; width:270px;height:50px;margin-top: 3%;margin-bottom: 20%;color: #CFD2D3;">ENTRAR</button>
+                            <!-- <button type="button" class="color-botones btn btn-lg btnRadius " style="margin-left:-2%;background-color: #323E48; width:290px;height:50px;margin-top: 3%;margin-bottom: 20%;" (click)="changeModal()">ENTRAR</button> -->
+                        </div>
+
+                    
+                        <!-- <div> 
+                            <a  href="https://vllwim0.banorte.com/sucursal/" class="color-botones btn btn-lg btnRadius " style="margin-left:-2%;background-color: #323E48; width:290px;height:50px;margin-top: 3%;margin-bottom: 20%;" target="_blank">Open Web new Window</a>
+                        </div> 
+
+                        <div>
+                            <button type="button" class="color-botones btn btn-lg btnRadius " style="margin-left:-2%;background-color: #323E48; width:290px;height:50px;margin-top: 3%;margin-bottom: 20%;" (click)="enviarMensajeAlMain()" >LLAMAR PINPAD</button>
+                        </div> -->
+                    
+                        
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+
+    <div class="col-md-8 col-xs-8 col-sm-8 " class="container" style="border-color: black; max-width: 600%;margin-left: 370px;margin-right: -102px;padding-left: 2px;padding-right: 980px;position: absolute; margin-bottom: 20%; margin-top: 1%;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="border:solid black;width :1300px;">
+            <!-- <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li *ngIf="!mostrar2" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li *ngIf="!mostrar3" data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li *ngIf="!mostrar4" data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li *ngIf="!mostrar5" data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li *ngIf="!mostrar6" data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                <li *ngIf="!mostrar7" data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+            </ol> -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100"  id="1" src="/car1.png" alt="Image 1">  
+                </div>
+                <!-- <div *ngIf="!mostrar2" class="carousel-item">
+                    <img class="d-block w-100" id="2" src="" alt="Image 2">
+                </div>
+                <div *ngIf="!mostrar3" class="carousel-item">
+                    <img class="d-block w-100" id="3" src="" alt="Image 3">
+                </div>
+                <div *ngIf="!mostrar4" class="carousel-item">
+                    <img class="d-block w-100" id="4" src="" alt="Image 4">
+                </div>
+                <div *ngIf="!mostrar5" class="carousel-item">
+                    <img class="d-block w-100" id="5" src="" alt="Image 5">
+                </div>
+                <div *ngIf="!mostrar6" class="carousel-item">
+                    <img class="d-block w-100" id="6" src="" alt="Image 6">
+                </div>
+                <div *ngIf="!mostrar7" class="carousel-item">
+                    <img class="d-block w-100" id="7" src="" alt="Image 7">
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div style="background-color: #E2062D; height: 100px;">
+    <p id="msgVersion" style="text-align: end;margin-right: 10px; margin-top: 20px; color: black; font-size: 18pt;">V 3.2.6 piloto</p>
+</div>
+
+<div class="row" style="margin-top: 23%;width: 1000px;height: 310px;margin-left: 90%;position: fixed;">
+    <div class="col-sm-8 text-center animated fadeIn fast" id="msgBancaDig">
+        <a>
+            <p id="msgVersion" style="margin-left: -87%; color: black; font-size: 20pt;">V 3.2.6 piloto</p>
+        </a>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 20%;margin-right: 0px;margin-left: 0px; background-color: #CFD2D3;margin-bottom:.5%;">
+    <div class="col-sm-8 animated fadeIn fast" id="espBancaDig" style="margin-left: 3%; margin-top: -.1%;">
+        <div class="row" id="divInfoCuotas" style="color:white;background-color: #E2062D !important;
+        background-repeat: no-repeat; width: 40%;margin-left: -4.9%; height: 80px;  margin-bottom:1%;margin-top:1%;">
+        <!-- <div (click)="modalInfo()" class="row" id="divInfoCuotas" style="color:white;background-color: #E2062D !important;
+        background-repeat: no-repeat; width: 40%;margin-left: -4.9%; height: 80px;  margin-bottom:1%;margin-top:1%;"> -->  
+            <div class="row" style="margin-left: 10%;font-size: 18pt;font-family: Gotham-Bold;color: white;padding: 6.5%;margin-top:-5%;margin-bottom:-1%;">
+                INFORMACION DE TARIFAS,
+                <div class="row" style="margin-left: -15%;">
+                COMISIONES DE PRODUCTOS Y AVISOS
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="ModalTDDLogin2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="ModalTDDLogin2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 27%;">
+        <div class="modal-content shadowModal">
+            <div data-dismiss="modal" style="position: absolute;right: 8%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-top: 3%;font-size: 0.7rem;width: 5px;height: 34px;background: transparent;">
+                <img alt="Mostrar mapa" height="30px" src="./assets/img/v3/icon-borrar.png" width="30px">
+            </div>
+            <div class="modal-header" align="center" style="align-self: center;margin-top: 4%; border-bottom: none">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #080808; margin-left: auto; margin-right: auto;" align="center">
+                            <div>
+                                <img src="assets/img/v3/icono-pinpad.png" class="align-center" alt="Smiley face"  width="30%">
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3 class="textoNegrita" id="capturaInicio" align="center" style="display: block; padding: 1% 8% 1% 8%">
+                    Sigue las instrucciones del lector de tarjetas
+                </h3>
+            </div>
+            <div class="modal-footer" style="text-align: -webkit-center;display: block;">
+                <button type="button" class="btn btnGenerico" (click)="callPinPad()">CONTINUAR</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Modal Informacion Regulatoria-->
+<!-- <div class="modal fade" id="modalInfoRegulatoria" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="ModalTDDLogin2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 800px;margin-top: -6%;">
+        <div class="modal-content shadowModal" style="margin-top: -17%; display: initial;">
+            <div class="modal-body">
+                <span id="btnPdf" (click)="reinicarImgMenuPdf()" class="btn btn-lg pull-right" style="position: absolute;right: -15px;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-right: -3%;margin-top: -4%;" data-dismiss="modal">
+                        <b>X</b>
+                </span>
+                <div id="opcionesCarpeta">
+                    <div style="width: 8%;height: 15%;position: absolute;margin-left: 88%;margin-top: 1%;" (click)="seleccionaOpcPdf('1')"></div>
+                    <div style="width: 8%;height: 15%;position: absolute;margin-left: 88%;margin-top: 20%;" (click)="seleccionaOpcPdf('2')"></div>
+
+                    <div style="width: 8%;height: 15%;position: absolute;margin-left: 88%;margin-top: 39%;" (click)="seleccionaOpcPdf('3')"></div>
+                    <div style="width: 8%;height: 15%;position: absolute;margin-left: 88%;margin-top: 58%;" (click)="seleccionaOpcPdf('4')"></div>
+
+                    <div style="width: 8%; height: 15%; position: absolute;margin-left: 88%;margin-top: 77%;" (click)="seleccionaOpcPdf('5')"></div>
+
+                    <div style="width: 8%; height: 15%;position: absolute; margin-left: 88%; margin-top: 96%;" (click)="seleccionaOpcPdf('6')"></div>
+                </div>
+
+                <div style="position: absolute;margin-top: 40%;margin-left: 10%;" *ngIf="menuInfoCondusef">
+                    <div (click)="mostrarModalPDF('2')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">COMUNICADO CONDUSEF</h4>
+                    </div>
+                    <div (click)="mostrarModalPDF('3')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">UNE M&Oacute;DULO DE RECEPCI&Oacute;N DE QUEJAS O INCONFORMIDADES</h4>
+                    </div>
+                    <div (click)="mostrarModalPDF('4')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">BUR&Oacute; DE ENTIDADES FINANCIERAS</h4>
+                    </div>
+                </div>
+
+                <div style="position: absolute; margin-top: 32%; margin-left: 10%; width: 70%;" *ngIf="menuTarifasYCom">
+                    <div>
+                        <h4 for="personaFisica"
+                            style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">
+                            Persona F&iacute;sica:
+                        </h4>
+                        <select  style="text-align: left; background-size: 40px !important;" (change)="sendIndexFisica()" id="pFisica" name="sitios-web"
+                            class="form-control input-lg selectModificado selColonia textoChico">
+                            <option value="" disabled selected>Selecciona una opci&oacute;n</option> 
+                            <option #ind *ngFor=" let pdfPF of listPdfF; let i=index">{{pdfPF}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h4 for="personaMoral"
+                            style="color: white; font-size: 18pt; margin-top: 30%; font-family: Gotham-Medium;">
+                            Persona Moral:
+                        </h4>
+                        <select style="text-align: left; background-size: 40px !important;" (change)="sendIndexMoral()" id="pMoral" name="personaMoral"
+                            class="form-control input-lg selectModificado selColonia textoChico">
+                            <option value="" disabled selected>Selecciona una opci&oacute;n</option>
+                            <option value="$" *ngFor="let pdfM of listPdfM; let i=index">{{pdfM}}</option>
+                        </select>
+                    </div>
+                </div>
+                
+
+                <div style="position: absolute;margin-top: 40%;margin-left: 10%;" *ngIf="menuTasasyFondos">
+                    <div (click)="mostrarModalPDF('16')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">CARTERAS VIGENTES FONDOS DE INVERSI&Oacute;N</h4>
+                    </div>-->
+                    <!-- <div (click)="mostrarModalPDF('23')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">PAGAR&Eacute;S, INVERSI&Oacute;N EN DLLS AMERICANOS</h4>
+                    </div>
+                </div>
+                <div style="position: absolute;margin-top: 40%;margin-left: 10%;" *ngIf="menuLeyTransparencia">
+                    <div (click)="mostrarModalPDF('17')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">LEY DE TRANSPARENCIA</h4>
+                    </div>
+                </div>
+                <div style="position: absolute;margin-top: 40%;margin-left: 10%;" *ngIf="menuInfoBanxico">
+                    <div (click)="mostrarModalPDF('18')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">¡AVISO IMPORTANTE! POR DISPOSICI&Oacute;N <br> DE BANCO DE M&Eacute;XICO</h4>
+                    </div>
+                    <div (click)="mostrarModalPDF('19')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">TRANSFERENCIA ELECTR&Oacute;NICA DE RECURSOS</h4>
+                    </div>
+                    <div (click)="mostrarModalPDF('20')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">CIRCULAR 04/2018 SOBRE LA DISPOSICI&Oacute;N DE <br> RECURSOS PROVENIENTES DE SPEIS</h4>
+                    </div>
+                    <div (click)="mostrarModalPDF('21')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">CIRCULAR 05/2018 SOBRE LA <br> DISPOSICI&Oacute;N DE <br> RECURSOS <br> PROVENIENTES <br> DE SPEIS</h4>
+                    </div>
+                </div>
+                <div style="position: absolute;margin-top: 40%;margin-left: 10%;" *ngIf="menuAvisos">
+                    <div (click)="mostrarModalPDF('22')">
+                        <h4 style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">AVISO DE PRIVACIDAD</h4>
+                    </div>
+                </div>
+                <img src="./assets/img/v3/tarifasInicio.png" class="align-center" id="imgCarpetaPdf" alt="Smiley face" height="100%" width="100%">
+
+            </div>
+        </div>
+    </div> -->
+
+    <!--MODAL PDF INFORMACION REGULATORIA-->
+    <!-- <div class="modal fade" id="pdfInfoModal" tabindex="-1" role="dialog" aria-labelledby="ModalTDDLogin" aria-hidden="true" data-backdrop="static">
+        <div id="divLargo" class="modal-dialog modal-dialog-centered" role="document" style="align-items: normal">
+            <div id="divAltura" class="modal-content shadowModal" style="height: 935px; width: 154%; margin-left: -25%; margin-top: -21%;">
+                <span (click)="ocultarModalPDF()" class="btn btn-lg pull-right" style="position: absolute;right: -4%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-right: -3%;margin-top: -4%;">
+                    <b>X</b>
+                </span>
+                <div id="divPDFViewer" style="background-color: rgb(209,209,209); overflow-y: auto;">
+                    <pdf-viewer id="iframePDF" [src]="pdfDoc|safePdf"  *ngIf="mostrar" style="display:block; margin-left: 2%; margin-right: 2%" [show-all]="true" [original-size]="false" [render-text]="true"></pdf-viewer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> -->
+
+<!--MODA MODIFICAR CR-->
+<!-- <div class="modal fade" id="modificaCrModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadowModal" style="width: 100%">
+            <div class="modal-body" style="padding: 2rem;">
+                <div data-dismiss="modal" style="position: absolute;right: 8%;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-top: -5%;font-size: 0.7rem;width: 5px;height: 34px;background: transparent;">
+                    <img alt="Mostrar mapa" height="30px" src="./assets/img/v3/icon-borrar.png" width="30px">
+                </div>
+                <app-modificar-cr></app-modificar-cr>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!--MODAL CORRESPONSALES-->
+<!-- <div class="modal fade" id="mapaModal" tabindex="-1" role="dialog" aria-labelledby="ModalTDDLogin" aria-hidden="true" data-backdrop="static">
+    <div id="divLargo" class="modal-dialog modal-dialog-centered" role="document" style="align-items: normal">
+        <div id="divAltura" class="modal-content shadowModal" style="width: 271%; margin-left: -78%; height: 482px; position: absolute; border: transparent;">
+            <span class="btn btn-lg pull-right" style="position: absolute;right: 5px;color: white;background-color: rgb(217,217,217);border-radius: 6rem;margin-right: -3%;margin-top: -4%;" data-dismiss="modal">
+                <b>X</b>
+            </span>
+            <iframe id="frameMapa" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+</div> -->

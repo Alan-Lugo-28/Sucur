@@ -1,0 +1,142 @@
+<div class="dvPagina">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="labelPagina">Comprar Tiempo Aire</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1" style="margin-left: -1%;"></div>
+        <div class="col-sm-2">
+            <label class="labelCuenta">Desde:</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="./assets/img/v3/icon-saldo.png"
+                style="position: absolute;margin-left: 65%;height: 110px;margin-top: 9%;">
+        </div>
+        <div class="col-sm-5">
+            <label class="labelCuenta" #lblAliasOrigen>{{tipoCuentaTdd}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5">
+            <label class="labelCuenta" #lblCuentaOrigen>{{mostrarCuentaMascara}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5" style="z-index: 1;">
+            <button id="btnVerSaldos" class="btn btnGenerico" (click)="mostrarSaldo()">VER SALDO</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5">
+            <label class="labelCuenta" *ngIf="lbVistaSaldo" style="font-family: Gotham-Black;">{{saldoClienteTdd}}</label>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin: 45% 0% 0% 6%; position: absolute; width: 89%;">
+    <div class="modal-footer deletePaddingRigth-buttom row" style="width: 100%;"></div>
+    <div style="z-index: 100;">
+        <button class="btn btnGenerico" routerLink="/menuTdd">REGRESAR</button>
+    </div>
+    <div style="z-index: 100; margin-left: 75%;">
+        <button id="continuar" [disabled]="!forma.valid" class="btn btnRojo" type="submit" data-toggle="modal"
+        (click)="validarSaldo()">CONTINUAR</button>
+    </div>
+</div>
+
+<fieldset class="padding-TittleToFieldset padding-fieldset-general">
+    <form>
+        <div class="row sumando-form-group" style="margin-top: 13%;">
+            <h2 class="text-center padding-barToTittle deleteMargin-h2 color-letra"
+                style="color: #323E48;font-size: 19pt; font-family: Gotham-Black; margin-top: 2%; margin-bottom: 2%; margin-left: auto; margin-right: auto;">
+                Selecciona la compañ&iacute;a telef&oacute;nica</h2>
+            <div class="col-sm-12 sumando-well-white">
+                <div class="row form-group modal-footer">
+                    <!-- <div id="atributo" class="col-lg-2 "> -->
+                    <div id="carriersDiv" class="row col-sm-12" style="height:60px; width:1200px;">
+                        <input type="hidden" id="carrier" name="carrier" />
+                        <div style="text-align: center; height: 98px;" align="center">
+                        <!-- <div [ngClass]="{'Telcel col-sm-3': true , 'border border-danger': blClassT}"
+                            style="text-align: center; height: 98px;" align="center"> -->
+                            <img src="./assets/img/7000.png" height="95px" style="display: inline-block;"
+                                class="imagenTelcel compTelefonica" #importeTelcel id="imagenTelcel"
+                                name='importeTelcel' ngDefaultControl formControlName="operador"
+                                (click)="cargaSaldo(importeTelcel)" />
+                        </div>
+                        <div style="text-align: center; height: 98px;" align="center">
+                        <!-- <div [ngClass]="{'Movistar col-sm-3': true , 'border border-danger': blClassM}"
+                            style="text-align: center; height: 98px;" align="center"> -->
+                            <img src="./assets/img/11000.png" height="95px" style="display: inline-block;"
+                                class="imagenMovistar compTelefonica" #importeMovi id="importeMovi" name='importeMovi'
+                                ngDefaultControl (click)="cargaSaldo(importeMovi)" />
+                        </div>
+                        <div style="text-align: center; height: 98px;" align="center">
+                        <!-- <div [ngClass]="{'Unefon col-sm-3': true , 'border border-danger': blClassU}"
+                            style="text-align: center; height: 98px;" align="center"> -->
+                            <img src="./assets/img/5000.png" height="95px" style="display: inline-block;"
+                                class="imagenUnefon compTelefonica" #importeUnefon id="importeUnefon"
+                                name='importeUnefon' ngDefaultControl (click)="cargaSaldo(importeUnefon)" />
+                        </div>
+                        <div style="text-align: center; height: 98px;" align="center">
+                        <!-- <div [ngClass]="{'Iusacell col-sm-3': true , 'border border-danger': blClassI}"
+                            style="text-align: center; height: 98px;" align="center"> -->
+                            <img src="./assets/img/6000.png" height="95px" style="display: inline-block;"
+                                class="imagenIusacell compTelefonica" #importeIusa id="importeIusa" name='importeIusa'
+                                ngDefaultControl (click)="cargaSaldo(importeIusa)" />
+                        </div>
+                    </div>
+
+                    <style>
+                        .disabledbutton {
+                            pointer-events: none;
+                            opacity: 0.4;
+                        }
+                    </style>
+
+                </div>
+                <div style="margin-left: 1%; margin-top: 3%">
+                    <label class="control-label texto">Seleccionar un importe:</label>
+
+                </div>
+                <div class="row" style="margin-left: 1%;text-align: center;">
+                    <div class="col-sm-1 amount-list" align="center" *ngFor="let recarga of recargas; let i = index"
+                        style="margin: 0px auto;">
+                        <label formControlName="importe" ngDefaultControl #importe id="{{recarga.ImporteTiempoAire}}"
+                            (click)="cargaImporte(importe)" class="textoNegrita">{{recarga.ImporteTiempoAire}}</label>
+
+                        <div id="botonMontos" style="display:none; ">
+                            <div id="muestraMontos" name="muestraMontos" class="btn-group" role="group">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-left: 1%; margin-top: 1%;">
+                    <label class="control-label texto">Ingresa el numero de tel&eacute;fono:</label>
+                </div>
+                <div class="row padding-InFieldset amount-list" style="margin-left: 0%;">
+                    <div class="col-sm-4">
+                        <input disabled="disabled" maxlength="50" #telefonoF
+                            formControlName="telefono" id="telefono" name="telefono" type="text"
+                            class="form-control amount inputModificado" style="width: 90%; background-color:rgb(244,244,244);font-size: 18pt; font-family: Gotham-Medium;"
+                            placeholder="Teléfono a 10 digitos"/>
+                        <div class="alert-danger"
+                            *ngIf="(forma.get('telefono').errors  && forma.get('telefono').touched)">
+                            <p color="danger" *ngIf="forma.get('telefono').hasError('required')">Dato obligatorio, favor
+                                de capturar.</p>
+                            <p color="danger"
+                                *ngIf="forma.get('telefono').hasError('minlength') || forma.get('telefono').hasError('maxlength') || forma.get('telefono').hasError('pattern')">
+                                Los datos proporcionados son incorrectos, favor de verificar.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </form>
+</fieldset>

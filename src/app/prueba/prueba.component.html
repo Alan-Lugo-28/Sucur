@@ -1,0 +1,156 @@
+
+<div class="well sumando-well-white" style="margin: 10px;">
+
+    <div class="row">
+        <div class="col-lg-6" align="left">
+            <strong>Fecha de operaci&oacute;n:</strong>
+        </div>
+        <div class="col-lg-5 modalText">
+            <label>{{fechaMesActualFin}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6" align="left">
+            <strong>Hora de operaci&oacute;n:</strong>
+        </div>
+        <div class="col-lg-5 modalText">
+            <label>{{hora}}</label>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-lg-6" align="left">
+            <strong>Cuenta origen:</strong>
+        </div>
+        <div class="col-lg-5 modalText">
+            <label>{{numCuenta_show}}</label>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-lg-5" align="left">
+            <strong>Destino de alertas:</strong>
+        </div>
+        <div class="col-lg-5 modalText">
+            <label style="word-break: break-word;">{{Email}}</label>
+        </div>
+    </div>
+</div>
+
+<!-- Aqui va lo de Glyphicons -->
+<div id="impresionEDC">
+    <nav class="navbar navbar-fixed-top navbar-top-red-pleca" role="navigation">
+        <div class="container">
+            <div class="navbar-header"></div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a onclick="regresar()" id="menud">
+                            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="sumando-list-group">
+        <div class="page-header">
+            <h2 style="margin-top: 120px;" id="msgUsuario" class="text-center color-letra">La impresi&oacute;n del estado de cuenta ha terminado.</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+
+                <button style="margin-right: 100px; margin-top: 60px;" type="button" class="btn btnGenerico" routerLink="/menuTDC">REGRESAR</button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="envioEDC">
+    <div ng-cloak class="padding-barToTittle">
+        <h2 class="text-center  color-letra">Operaci&oacute;n exitosa</h2>
+    </div>
+
+    <fieldset align="center" class="padding-TittleToFieldset padding-fieldset-general">
+        <div class="well sumando-well-white">
+            <div>
+                <div class="row" id="msgCreditos" style="display: block">
+                    <div class="col-lg-12" align="center">
+                        <label style="width: 49%;">
+                            Gracias por seleccionar la opci&oacute;n Enviar por
+                            correo, tu Estado de cuenta de cr&eacute;ditos fue enviado a la
+                            cuenta de correo:
+                        </label>
+                    </div>
+                </div>
+                <div class="row" id="paperlesActivado" style="display: none">
+                    <div class="col-lg-12" align="center">
+                        <label style="width: 32%;">
+                                        Gracias por seleccionar la opci&oacute;n Enviar por
+                                        correo, tu estado de cuenta fue enviado a la
+                                        cuenta de correo:
+                                    </label>
+                    </div>
+                </div>
+                <div class="row" id="paperlesNuevo" style="display: none">
+                    <div class="col-lg-12" align="center">
+                        <label style="width: 40%;">
+                                            Gracias por seleccionar la opci&oacute;n Enviar por
+                                            correo, tu estado de cuenta, a partir de este
+                                            momento te estar&aacute; llegando mensualmente a
+                                            la cuenta de correo: 
+                                        </label>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <p style="font-size: 1.3rem; font-weight: 700">{{EmailCliente}}</p>
+                </div>
+            </div>
+        </div>
+        <div style="margin:30px 0px 0px 0px;" class="row">
+            <div style=" padding: 0px;" class="col-sm-12">
+                <button id="terminar" class="btn btnGenerico" (click)="irMenuTDC()">
+                      TERMINAR
+                    </button>
+            </div>
+        </div>
+
+    </fieldset>
+</div>
+
+<!-- Cambios del control-label -->
+<div style="margin-left: 1%; margin-top: 1%;">
+    <label class="col-form-label texto">Ingresa el numero de tel&eacute;fono:</label>
+</div>
+
+<!-- Cambios .input-lg to form-control-lg -->
+<div style="position: absolute; margin-top: 32%; margin-left: 10%; width: 70%;">
+    <div>
+        <h4 for="personaFisica"
+            style="color: white; font-size: 18pt; margin-top: 4%; font-family: Gotham-Medium;">
+            Persona F&iacute;sica:
+        </h4>
+        <select  style="text-align: left; background-size: 40px !important;"  id="pFisica" name="sitios-web"
+            class="form-control form-control-lg selectModificado selColonia textoChico">
+            <option value="" disabled selected>Selecciona una opci&oacute;n</option> 
+            <option #ind *ngFor=" let pdfPF of listPdfF; let i=index">{{pdfPF}}</option>
+        </select>
+    </div>
+    <div>
+        <h4 for="personaMoral"
+            style="color: white; font-size: 18pt; margin-top: 30%; font-family: Gotham-Medium;">
+            Persona Moral:
+        </h4>
+        <select style="text-align: left; background-size: 40px !important;"id="pMoral" name="personaMoral"
+            class="form-control form-control-lg selectModificado selColonia textoChico">
+            <option value="" disabled selected>Selecciona una opci&oacute;n</option>
+            <option value="$" *ngFor="let pdfM of listPdfM; let i=index">{{pdfM}}</option>
+        </select>
+    </div>
+</div>

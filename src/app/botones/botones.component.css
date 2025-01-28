@@ -1,0 +1,23 @@
+/* Clases de la version 4.6 */
+.btn1{
+    display:inline-block;
+    text-align:center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    border:1px solid transparent;
+    padding:.375rem .75rem;
+    font-size:1rem;
+    line-height:1.5;
+    border-radius:.25rem;
+    transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+    }
+.btn-lg1{
+        padding:.5rem 1rem;font-size:1.25rem;line-height:1.5;
+       }
+/* .btn-lg1{
+    padding:.5rem 1rem;font-size:1.25rem;line-height:1.5;border-radius:3rem!important
+    } */
+       
+   
