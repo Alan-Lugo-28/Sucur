@@ -13,7 +13,6 @@ export class NotFoundComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    document.body.style.backgroundImage = "url('/bg-02.png')";
     const this_aux = this; 
     // let navElement = document.getElementById("navBar");
     // navElement.classList.remove("nav-img-banorte-preferente");

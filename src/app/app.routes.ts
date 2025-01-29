@@ -7,7 +7,7 @@ import { CompraTiempoAireComponent } from './tdd/compra-tiempo-aire/compra-tiemp
 import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
-    { path: 'login', component: LoginComponent },
+    { path: '', component: LoginComponent },
     { path: 'final', component: FinalComponent },
     {path: 'prueba', component: PruebaComponent},
     {path: 'botones', component: BotonesComponent},
