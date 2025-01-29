@@ -6,7 +6,7 @@ import { BotonesComponent } from './botones/botones.component';
 import { CompraTiempoAireComponent } from './tdd/compra-tiempo-aire/compra-tiempo-aire.component';
 
 export const routes: Routes = [
-    { path: 'login', component: LoginComponent },
+    { path: 'https://sucur.onrender.com/login', component: LoginComponent },
     { path: 'final', component: FinalComponent },
     {path: 'prueba', component: PruebaComponent},
     {path: 'botones', component: BotonesComponent},
