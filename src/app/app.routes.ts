@@ -4,6 +4,7 @@ import { FinalComponent } from './final/final.component';
 import { PruebaComponent } from './prueba/prueba.component';
 import { BotonesComponent } from './botones/botones.component';
 import { CompraTiempoAireComponent } from './tdd/compra-tiempo-aire/compra-tiempo-aire.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -11,5 +12,5 @@ export const routes: Routes = [
     {path: 'prueba', component: PruebaComponent},
     {path: 'botones', component: BotonesComponent},
     {path: 'compra', component: CompraTiempoAireComponent},
-    { path: '**', component: LoginComponent }
+    { path: '**', component: NotFoundComponent }
 ];
